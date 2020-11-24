@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+
+<html> 
+
+<head>
+   <meta charset="utf-8">
+   <title> webdevelopment-asd</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+body{
+background-color:#fffff0;
+font-size: 16px;
+margin:0;
+position: relative;
+padding-bottom: 30px;
+min-height: 100%;
+}
+
+html {
+height: 100%;
+box-sizing: border-box;
+}
+
+
+*, *:before, *:after {
+box-sizing: inherit;
+}
+​
+
+.heading{
+position: relative;
+}
+
+.top-bar {
+margin:0;
+height:130px;
+width:100%;
+background-color: lightyellow;
+box-shadow: 0 0 10px 8px #bbb;
+outline:none;
+position: relative;
+left: 0;
+top: 0;
+border: 1px solid #aaa;
+z-index: 3; 
+}
+
+
+
+.nav-bar {
+padding: 30px;
+position: absolute;
+top:0px;
+right:0px;
+transition: all 1s ease;
+cursor:pointer;
+}
+
+
+
+.sidenav-bar {
+height: 100%;
+width: 0;
+position: fixed;
+z-index: 5; 
+top: 0;
+left: 0;
+background-color:#fffff0;
+overflow-x: hidden;
+transition: all 1s ease;
+text-align:center;
+font-smoothing: antialiased;
+-webkit-font-smoothing: antialiased;
+}
+
+.sidenav-bar a {
+padding: 5px 5px 5px 20px;
+text-decoration: none;
+font-size: 70px;
+display: block;
+transition: all. 3s ease;
+color: grey;
+}
+
+
+.sidenav-bar .closebtn {
+position: absolute;
+padding: 10px 30px;
+top: 16px;
+right: 16px;
+color: grey;
+cursor:pointer;
+transition: all 1s ease;
+}
+
+
+
+.footer {
+margin: 0;
+height: 70px;
+position: absolute;
+bottom: 0px;
+left: 0px; 
+width: 100%;
+background-color: lightyellow;
+box-shadow: 0 0 10px 8px #bbb;
+outline:none;
+border: 1px solid lightgrey;
+}
+
+.footer p {
+position: absolute;
+margin: 0;
+bottom: 10px;
+right: 10px;
+font-size: 16px;
+color: #555;
+}
+
+.fa {
+font-size: 70px;
+color:grey;
+transition: all 1s ease;
+}
+
+.fa-paint-brush,.fa-history{
+font-size: 55px;
+}
+
+
+
+
+.home-icon {
+padding: 28px;
+float: left;
+position: absolute;
+top:0px;
+left:10px;
+}
+
+
+.editnav {
+padding: 30px;
+position: absolute;
+right: 118px;
+top: 0px;
+transition: all 1s ease;
+cursor:pointer;
+display: block;
+}
+
+
+.history-icon {
+padding: 24px 40px;
+position: absolute;
+top: 0px;
+right: 100px;
+transition: all 1s ease;
+cursor:pointer;
+}
+
+.code-icon {
+padding: 16px 30px;
+position: absolute;
+top: 0px;
+right: 230px;
+transition: all 1s ease;
+cursor:pointer;
+}
+
+.color-icon {
+padding: 24px 30px;
+position: absolute;
+top: 0px;
+right: 370px;
+transition: all 1s ease;
+cursor:pointer;
+}
+
+
+.close {
+padding: 0px 25px;
+font-size: 90px;
+font-weight:bold;
+color:grey;
+position: absolute;
+top: 0px;
+right: 0px;
+transition: all .1s ease;
+cursor:pointer;
+}
+
+.content{
+max-width:1080px;
+margin:auto;
+}
+
+
+#frame{
+width: 100%;
+min-height: 30px;
+}
+
+#nav1 {
+margin:0;
+height: 0px;
+width: 100%;
+position: relative;
+top: 130px;
+right: 0;
+background-color: lightyellow;
+overflow: hidden;
+transition: .3s ;
+border: none;
+z-index: 1;
+}
+
+.vl {
+border-left: 1px solid grey;
+height: 110px;
+position: absolute;
+top: 0px;
+right: 100px;
+}
+
+
+
+
+
+</style>
+</head>
+<body>
+
+
+<div class="heading">
+
+<div class="top-bar">
+
+<div class="home-icon" >
+<a href="http://www.webdevelopment-asd.ml/" ><i class="fa fa-home"></i> </a>
+</div>
+
+
+
+<div class="editnav" >
+<a onclick="nav1Function()"><i class="fa fa-edit"></i> </a>
+</div>
+
+
+
+<div class="nav-bar" >
+<a onclick="openNav()" ><i class="fa fa-bars"></i> </a>
+</div>
+
+<div id="nav1">
+  <div class="close">
+<a onclick="close1(); return false;">&times;</a>
+</div>
+<div class="vl"></div>
+
+<div class="history-icon" >
+<a onclick="goBack()"><i class="fa fa-history"></i> </a>
+</div>
+
+<div class="code-icon" >
+<a href="https://3d3phxzwznlzoixhs5u0wa-on.drv.tw/Web development /00_index/00_editor.html" target="frame_main"><i class="fa fa-code"></i> </a>
+</div>
+
+<div class="color-icon" >
+   <a href="https://3d3phxzwznlzoixhs5u0wa-on.drv.tw/Web development /colors/00_color.html" target="frame_main"> <i class="fa fa-paint-brush"></i>
+   ​ </a>
+
+
+</div>
+   
+
+</div>
+</div>
+
+
+
+
+<div id="mySidenav" class="sidenav-bar">
+
+  <a href="" class="closebtn" onclick="closeNav(); return false;"> <i class="fa fa-arrow-left"></i></a>
+
+  <a href="https://3d3phxzwznlzoixhs5u0wa-on.drv.tw/Web development /00_index/HTML00_html_elements.html" target="frame_main" onclick="closeNav()" style="position:relative; top:15%;">HTML</a>
+
+  <a href="https://3d3phxzwznlzoixhs5u0wa-on.drv.tw/Web development /00_index/CSS00_properties.html" target="frame_main" onclick="closeNav()" style="position:relative; top:20%;">CSS</a>
+
+
+  <a href="https://3d3phxzwznlzoixhs5u0wa-on.drv.tw/Web development /00_index/scripting_languages.html" target="frame_main" onclick="closeNav()" style="position:relative; top:25%;">Scripting</a>
+
+  <a href="https://3d3phxzwznlzoixhs5u0wa-on.drv.tw/Web development /00_index/00_frontendcodes.html" target="frame_main" onclick="closeNav()" style="position:relative; top:30%;">Front-end Codes</a>
+
+  <a href="https://3d3phxzwznlzoixhs5u0wa-on.drv.tw/Web development /colors/00_color.html" target="frame_main" onclick="closeNav()" style="position:relative; top:35%;">Color Codes</a>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<div class="content">
+<iframe id="frame" src="https://3d3phxzwznlzoixhs5u0wa-on.drv.tw/Web development /00_index/00_webdevelopment.html" name="frame_main" scrolling="no" marginheight="70px" frameborder="0"> </iframe>
+</div>
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.2.11/iframeResizer.js"></script> 
+
+<script>
+iFrameResize({ log: true }, '#frame')
+</script>
+
+
+ 
+<script>
+
+function openNav() {
+document.getElementById("mySidenav").style.width = "100%";}
+
+function closeNav() {
+document.getElementById("mySidenav").style.width = "0";
+}
+
+function goBack() {
+window.history.back();
+}
+
+
+
+function nav1Function() {
+
+document.getElementById("nav1").style.height = "100px";
+document.getElementById("nav1").style.border = "1px solid #555";
+document.getElementById("nav1").style.borderTop = "none";
+
+}
+
+
+function close1() {
+
+document.getElementById("nav1").style.height = "0px";
+document.getElementById("nav1").style.border = "none";
+}
+
+
+
+</script>
+
+
+
+
+
+
+
+<div class="footer">
+<p>&copy Copywrite 2020 </p>
+</div>
+
+
+
+
+</body>
+</html>
+
+
